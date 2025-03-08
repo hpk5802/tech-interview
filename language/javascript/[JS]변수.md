@@ -131,6 +131,12 @@ loop();
 <td><strong>const</strong></td>
 </tr>
 <tr>
+<td>초기화</td>
+<td>선언과 동시 X</td>
+<td>선언과 동시 X</td>
+<td>선언과 동시 O</td>
+</tr>
+<tr>
 <td>재선언</td>
 <td>O</td>
 <td>X</td>
@@ -149,3 +155,5 @@ loop();
 <td>블록</td>
 </tr>
 </table>
+
+`let` 키워드는 예기치 않게 이미 선언한 변수를 덮어 쓸 수 있습니다. 재할당이 필요하지 않은 경우 `const`를 사용하고, 재할당이 필요한 경우에만 `let`을 사용하는 것이 좋습니다.
