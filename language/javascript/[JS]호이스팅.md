@@ -64,7 +64,34 @@ console.log(a); // ReferenceError: Cannot access 'a' before initialization
 a = 1; // 초기화 및 할당
 ```
 
-`let`과 `const`의 호이스팅은 선언과 초기화중 `선언`만을 호이스팅하고 초기화는 실제 코드에 도달했을 때 이루어집니다.
+`let`과 `const`의 호이스팅은 선언과 초기화중 `선언`만을 호이스팅하고 초기화는 실제 코드에 도달했을 때 이루어집니다.<br/><br/>
+`let`과 `const`가 호이스팅 된다는 것을 빠르게 이해시켜드리기 위해 코드 하나를 보여드리겠습니다.
+
+```javascript
+let a = 1;
+
+function func() {
+  console.log(a); // ReferenceError: Cannot access 'a' before initialization
+  let a = 2;
+}
+
+func();
+```
+
+위 코드에서 전역으로 선언된 `a`가 있기 때문에 `console.log(a)`의 결과가 `1`로 출력될 것 같지만, `ReferenceError`가 발생했습니다. 즉, `func` 블록 내부에서 `let a = 2`가 호이스팅 된 것입니다.
+
+```javascript
+/* JS 내부 동작 - 호이스팅 발생 */
+let a = 1;
+
+function func() {
+  let a; // 선언만 호이스팅
+  console.log(a); // ReferenceError: Cannot access 'a' before initialization
+  a = 2; // 초기화화
+}
+
+func();
+```
 
 ## 함수의 호이스팅
 
