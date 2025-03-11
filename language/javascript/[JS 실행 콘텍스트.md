@@ -74,14 +74,15 @@ console.log(TVChannel);
 > console.log(TVChannel);
 > ```
 >
-> ![콜 스택 - 실행 단계_const](./images/image_creation_const.png) > `TVChannel`을 선언은 하였지만 초기화하지 않아 `Reference Error`가 발생할 것입니다. 이렇게 `let` 또는 `const`로 선언한 변수를 선언 이전에 참조할 수 없는 구간을 `TDZ(Temporal Dead Zone)`이라고 합니다.
+> ![콜 스택 - 실행 단계_const](./images/image_creation_const.png)<br/>
+> `TVChannel`을 선언은 하였지만 초기화하지 않아 `Reference Error`가 발생할 것입니다. 이렇게 `let` 또는 `const`로 선언한 변수를 선언 이전에 참조할 수 없는 구간을 `TDZ(Temporal Dead Zone)`이라고 합니다.
 
 ## 실행 콘텍스트 동작 - 외부 환경 참조
 
 > 실행 콘텍스트는 현재 콘텍스트에서 변수나 함수 등을 찾지 못하면 `Outer`를 이용해 외부(이전) 렉시컬 환경을 참조할 수 있습니다.
 > ![외부 환경 참조](./images/image_outer.png)
 > 위 예시를 보면, `lamp`의 경우 `goTo3F()` 콘텍스트에서 찾을 수 없어 `Outer`를 이용해 이전 렉시컬 환경의 `lamp`를 참조했습니다. 이때, 전역 콘텍스트에도 `lamp`가 있지만 이미 콜 스택의 2번째 실행 콘텍스트에서 `lamp`를 찾았기 때문에 더 내려갈 필요가 없습니다.<br/><br/>
-> 이렇게 식별자를 결정할 때 활용하는 스코프들의 연결 리스트를 `스코프 체인`이라고 하고, 이 과정dmf `스코프 체이닝`이라고 합니다.
+> 이렇게 식별자를 결정할 때 활용하는 스코프들의 연결 리스트를 `스코프 체인`이라고 하고, 이 과정을 `스코프 체이닝`이라고 합니다.
 
 ## 요약
 
